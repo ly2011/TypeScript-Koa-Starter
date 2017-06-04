@@ -6,7 +6,6 @@
         "moduleResolution": "node",
         "removeComments": false,
         "experimentalDecorators": true,
-        "allowJs": true,
         "sourceMap": true,
         "outDir": "dist",
         "baseUrl": ".",
