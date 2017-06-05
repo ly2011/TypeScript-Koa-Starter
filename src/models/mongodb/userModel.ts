@@ -1,13 +1,10 @@
 /*
  * user model/schema
- * @Author: fengyun2
- * @Date: 2016-12-23 15:21:20
- * @Last Modified by: fengyun2
- * @Last Modified time: 2016-12-23 15:25:44
+ * @Author: ly2011
  */
 
 // import { db, Schema } from './mongodb';
-import mongodb from './mongodb';
+import mongodb from "./mongodb";
 const { db, Schema } = mongodb;
 
 const UserSchema = new Schema({
@@ -34,7 +31,7 @@ const UserSchema = new Schema({
   },
   state: {
     type: String,
-    default: 'active'
+    default: "active"
   },
   location: {
     type: String,
@@ -98,5 +95,5 @@ UserSchema.statics.create = async function(obj: object) {
 /**
  * 第三个参数使创建mongo表为user单数, 如果不设置则为默认为复数
  */
-const userModel = db.model('User', UserSchema, 'user');
+const userModel = db.model("User", UserSchema, "user");
 export default userModel;

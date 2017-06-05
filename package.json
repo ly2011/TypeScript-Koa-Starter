@@ -20,7 +20,10 @@
     "build-sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
     "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "copy-static-assets": "node copyStaticAssets.js"
+    "copy-static-assets": "node copyStaticAssets.js",
+    "pm2-start": "pm2 start config/pm2.dev.config.json && pm2 logs",
+    "pm2-deploy": "pm2 start config/pm2.prod.config.json",
+    "pm2-del": "pm2 delete all"
   },
   "jest": {
     "globals": {
@@ -39,9 +42,12 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "chalk": "^1.1.3",
     "config": "^1.26.1",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-compose": "^4.0.0",
+    "koa-convert": "^1.2.0",
     "koa-cors": "^0.0.16",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.0.0",
@@ -56,6 +62,7 @@
     "@types/config": "^0.0.32",
     "@types/jest": "^19.2.2",
     "@types/koa-bodyparser": "^3.0.23",
+    "@types/koa-compose": "^3.2.2",
     "@types/koa-json": "^2.0.16",
     "@types/koa-logger": "^2.0.2",
     "@types/koa-router": "^7.0.22",
@@ -67,7 +74,7 @@
     "@types/nodemailer": "^1.3.32",
     "concurrently": "^3.4.0",
     "jest": "^19.0.2",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7",

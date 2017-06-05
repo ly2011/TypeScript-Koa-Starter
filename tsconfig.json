@@ -2,11 +2,13 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es6",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "moduleResolution": "node",
         "removeComments": false,
+        "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
+        "watch": false,
         "outDir": "dist",
         "baseUrl": ".",
         "paths": {

@@ -15,6 +15,14 @@
     "redisConfig": {
       "host": "127.0.0.1",
       "port": 6379
-    }
+    },
+    "sessionConfig": {
+      "key": "koa:sess",
+      "maxAge": 86400000,
+      "overwrite": true,
+      "httpOnly": true,
+      "signed": false
+    },
+    "logColor": true
   }
 }
