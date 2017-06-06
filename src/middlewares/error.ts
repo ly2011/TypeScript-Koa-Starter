@@ -1,13 +1,14 @@
-import { Middleware, Context } from "koa";
+import {Middleware, Context} from 'koa';
 
-export default (opts?): Middleware => {
-  return async (ctx, next) => {
+export default(opts
+  ?) : Middleware => {
+  return async(ctx, next) => {
     try {
       await next();
     } catch (err) {
       switch (err.status) {
         case 401:
-          ctx.body = "请先登录！";
+          ctx.body = '请先登录！';
           break;
 
         default:
